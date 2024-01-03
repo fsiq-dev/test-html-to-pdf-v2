@@ -34,20 +34,33 @@ export default function validatePDFOptions(options): boolean {
       return false; // Se uma chave desconhecida for encontrada, retorna false
     }
   }
-
+  
   if (
+    options.width &&
     typeof options.width !== "string" ||
+    options.height &&
     typeof options.height !== "string" ||
+    options.printBackground &&
     typeof options.printBackground !== "boolean" ||
+    options.displayHeaderFooter &&
     typeof options.displayHeaderFooter !== "boolean" ||
+    options.footerTemplate &&
     typeof options.footerTemplate !== "string" ||
+    options.headerTemplate &&
     typeof options.headerTemplate !== "string" ||
+    options.margin &&
     typeof options.margin !== "object" ||
+    options.landscape &&
     typeof options.landscape !== "boolean" ||
+    options.pageRanges &&
     typeof options.pageRanges !== "string" ||
+    options.format &&
     typeof options.format !== "string" ||
+    options.preferCSSPageSize &&
     typeof options.preferCSSPageSize !== "boolean" ||
+    options.scale &&
     typeof options.scale !== "number" ||
+    options.path &&
     typeof options.path !== "string"
   ) {
     return false;

@@ -63,7 +63,6 @@ export const GeneratePDF = async (req: IGeneratePDFRequest, res) => {
   await Page.setContent(htmlString);
   await Page.emulateMediaType("screen");
   const pdf = await Page.pdf(parsedOptions || defaultOptions);
-
   await Browser.close();
 
   res.contentType("application/pdf").send(pdf);
